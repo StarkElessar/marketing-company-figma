@@ -1,7 +1,7 @@
 # MarketingCompany
-### Responsive typesetting layout from Figma + adaptive design
+Responsive typesetting layout from Figma + adaptive design
 
-## Steck:
+### Steck:
 
 - html
 - scss
