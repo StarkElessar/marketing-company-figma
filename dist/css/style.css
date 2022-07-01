@@ -332,11 +332,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .promo__body {
   max-width: 620px;
-  padding: 260px 0 80px 0;
+  padding-bottom: 80px;
+  padding-top: 260px;
+}
+@media (max-width: 1200px) {
+  .promo__body {
+    padding-top: calc(60px + 200 * ((100vw - 320px) / 1600));
+  }
 }
 .promo__title {
   font-weight: 700;
-  font-size: 65px;
+  font-size: calc(42px + 13 * ((100vw - 320px) / 880));
   line-height: 135%;
   text-transform: uppercase;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
@@ -344,25 +350,59 @@ h1, h2, h3, h4, h5, h6 {
 .promo__title span {
   color: #E71D36;
 }
+@media (max-width: 425.98px) {
+  .promo__title {
+    line-height: 110%;
+  }
+}
 .promo__sub-title {
   font-weight: 500;
-  font-size: 26px;
+  font-size: calc(20px + 4 * ((100vw - 320px) / 880));
   line-height: 31px;
   letter-spacing: 0.02em;
   color: #011627;
-  margin: 40px 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1200px) {
+  .promo__sub-title {
+    margin-top: calc(20px + 20 * ((100vw - 320px) / 1600));
+  }
+}
+@media (max-width: 1200px) {
+  .promo__sub-title {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 1600));
+  }
 }
 .promo__description {
   font-weight: 400;
   font-size: 18px;
+  font-size: calc(13px + 5 * ((100vw - 320px) / 880));
+  padding: 0 0 5px 0;
   line-height: 22px;
   color: #011627;
   margin-bottom: 71px;
+}
+@media (max-width: 1200px) {
+  .promo__description {
+    margin-bottom: calc(30px + 41 * ((100vw - 320px) / 1600));
+  }
+}
+@media (max-width: 375.98px) {
+  .promo__description {
+    max-width: 260px;
+  }
 }
 
 .action-promo {
   display: flex;
   align-items: center;
+}
+@media (max-width: 451.98px) {
+  .action-promo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .action-promo__btn {
   border-radius: 62px;
@@ -383,6 +423,11 @@ h1, h2, h3, h4, h5, h6 {
 .action-promo__watch {
   display: flex;
   align-items: center;
+}
+@media (max-width: 451.98px) {
+  .action-promo__watch {
+    margin-top: 20px;
+  }
 }
 .action-promo__img {
   position: relative;
@@ -443,13 +488,13 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1);
 }
 
-.img-block {
+.img-block__img {
   position: relative;
-  width: 495px;
+  max-width: 495px;
   height: 690px;
   overflow: hidden;
 }
-.img-block::after {
+.img-block__img::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -466,6 +511,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   z-index: 2;
+}
+@media (max-width: 1150px) {
+  .img-block {
+    display: none;
+  }
 }
 
 .footer {

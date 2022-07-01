@@ -22,38 +22,53 @@
 
   &__body {
     max-width: 620px;
-    padding: 260px 0 80px 0;
+    padding-bottom: 80px;
+    @include adaptive-value("padding-top", 260, 60, 2);
   }
   &__title {
     font-weight: 700;
-    font-size: 65px;
+    @include adaptiv-font(55, 42);
     line-height: 135%;
     text-transform: uppercase;
     text-shadow: 1px 1px 5px rgba(#000, 15%);
     & span {
       color: $firstAccentColor;
     }
+
+    @media (max-width: 425.98px) {
+      line-height: 110%;
+    }
   }
   &__sub-title {
     font-weight: 500;
-    font-size: 26px;
+    @include adaptiv-font(24, 20);
     line-height: 31px;
     letter-spacing: 0.02em;
     color: $fontColor;
-    margin: 40px 0;
+    @include adaptive-value("margin-top", 40, 20, 2);
+    @include adaptive-value("margin-bottom", 40, 20, 2);
   }
   &__description {
     font-weight: 400;
     font-size: 18px;
+    @include adaptiv-font(18, 13);
+    padding: 0 0 5px 0;
     line-height: 22px;
     color: $fontColor;
-    margin-bottom: 71px;
+    @include adaptive-value("margin-bottom", 71, 30, 2);
+    @media (max-width: 375.98px) {
+      max-width: 260px;
+    }
   }
 }
 
 .action-promo {
   display: flex;
   align-items: center;
+  @media (max-width: 451.98px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   &__btn {
     border-radius: 62px;
@@ -75,6 +90,9 @@
   &__watch {
     display: flex;
     align-items: center;
+    @media (max-width: 451.98px) {
+      margin-top: 20px;
+    }
   }
   &__img {
     position: relative;
@@ -92,7 +110,7 @@
 
     &::after,
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -119,7 +137,7 @@
     line-height: 24px;
     color: $firstAccentColor;
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       right: 0;
@@ -141,26 +159,32 @@
 }
 
 .img-block {
-  position: relative;
-  width: 495px;
-  height: 690px;
-  overflow: hidden;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 451px;
-    height: 551px;
-    background: linear-gradient(180deg, rgba(255, 208, 214, 50%) 0%, rgba(255, 231, 198, 50%) 100%);
-    border: 5px solid rgba(231, 29, 54, 30%);
-    border-radius: 250px 250px 10px 10px;
-    z-index: 1;
+  &__img {
+    position: relative;
+    max-width: 495px;
+    height: 690px;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 451px;
+      height: 551px;
+      background: linear-gradient(180deg, rgba(255, 208, 214, 50%) 0%, rgba(255, 231, 198, 50%) 100%);
+      border: 5px solid rgba(231, 29, 54, 30%);
+      border-radius: 250px 250px 10px 10px;
+      z-index: 1;
+    }
   }
   & img {
     position: relative;
     height: 100%;
     object-fit: cover;
     z-index: 2;
+  }
+
+  @media (max-width: 1150px) {
+    display: none;
   }
 }
