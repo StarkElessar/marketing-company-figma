@@ -122,6 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   background-color: transparent;
+  background-color: #eee;
 }
 .header__container {
   position: relative;
@@ -146,11 +147,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
 }
-@media (max-width: 768.98px) {
-  .menu {
-    display: none;
-  }
-}
 .menu__list {
   display: flex;
   margin-right: 40px;
@@ -168,9 +164,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: calc(15px + 15 * ((100vw - 320px) / 1600));
   }
 }
+@media (max-width: 768.98px) {
+  .menu__item:not(:last-child) {
+    margin-right: 0;
+  }
+}
 @media (max-width: 1023.98px) {
   .menu__item:nth-child(2), .menu__item:nth-child(3) {
     display: none;
+  }
+}
+@media (max-width: 768.98px) {
+  .menu__item:nth-child(2), .menu__item:nth-child(3) {
+    display: block;
   }
 }
 .menu__link {
@@ -194,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -5px;
   transform: scale(0);
   width: 100%;
-  height: 3px;
+  height: 2px;
   opacity: 0;
   background-color: #E71D36;
   transition: all 280ms ease 0ms;
@@ -214,27 +220,28 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #b1071a;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2), 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
-.menu.show {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(270px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  width: 100%;
-  padding: 40px 0;
-}
-.menu.show .menu__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 0;
-}
-.menu.show .menu__item {
-  margin-right: 0;
-  margin-bottom: 20px;
+@media (max-width: 768.98px) {
+  .menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(345px);
+    padding: 40px 0;
+    background-color: #dadada;
+  }
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+  .menu__item {
+    margin-bottom: 20px;
+  }
 }
 
 .burger-menu {
