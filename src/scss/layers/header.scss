@@ -1,26 +1,35 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   min-height: 100px;
   display: flex;
   align-items: center;
   background-color: transparent;
-  background-color: #eee;
+  z-index: 50;
   &__container {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
+    z-index: 51;
   }
   &__logo{
+    position: relative;
     font-weight: 700;
     @include adaptiv-font(65, 46);
     color: $firstAccentColor;
     text-shadow: 1px 1px 6px rgba(#000, 10%);
+    z-index: 52;
   }
   &__menu {
     margin-left: auto;
   }
   &__burger {
+    position: relative;
     margin-left: auto;
+    z-index: 51;
   }
 }
 
@@ -100,15 +109,18 @@
 
   @media (max-width: 768.98px) {
     position: absolute;
-    bottom: 0;
+    top: 78px;
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(345px);
+    transform: translateY(-170%);
     padding: 40px 0;
-    background-color: rgb(218, 218, 218);
+    background-color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: all 350ms ease;
+    z-index: 20;
     &__list {
       display: flex;
       flex-direction: column;
@@ -119,7 +131,10 @@
       margin-bottom: 20px;
     }
 
-
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -131,7 +146,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
-  transform: rotate(0deg);
+  transform: rotate(180deg);
   transition: transform 250ms ease;
 
   @media (max-width: 768.98px) {
@@ -139,7 +154,6 @@
   }
   
   &.active {
-    transform: rotate(180deg);
 
     & .burger-menu__l {
       transform: translateY(11px) rotate(-45deg);
@@ -147,7 +161,6 @@
     }
     & .burger-menu__c {
       opacity: 0;
-      transition: transform 250ms ease 350ms;
     }
     & .burger-menu__r {
       transform: translateY(-11px) rotate(45deg);
@@ -159,7 +172,7 @@
     height: 4px;
     background-color: $firstAccentColor;
     box-shadow: 0 1px 2px rgba(#000, 30%);
-    transition: transform 250ms ease 350ms;
+    transition: transform 250ms ease;
   }
   &__c {
     width: 100%;
@@ -167,13 +180,12 @@
     opacity: 1;
     background-color: $firstAccentColor;
     box-shadow: 0 1px 2px rgba(#000, 30%);
-    transition: transform 250ms ease 350ms;
   }
   &__r {
     width: 100%;
     height: 4px;
     background-color: $firstAccentColor;
     box-shadow: 0 1px 2px rgba(#000, 30%);
-    transition: transform 250ms ease 350ms;
+    transition: transform 250ms ease;
   }
 }
