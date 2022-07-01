@@ -518,6 +518,47 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.our-work {
+  padding-top: 80px;
+}
+@media (max-width: 1200px) {
+  .our-work {
+    padding-top: calc(30px + 50 * ((100vw - 320px) / 1600));
+  }
+}
+.our-work__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: calc(30px + 10 * ((100vw - 320px) / 880));
+  line-height: 54px;
+  letter-spacing: 0.02em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1200px) {
+  .our-work__title {
+    line-height: calc(35px + 19 * ((100vw - 320px) / 1600));
+  }
+}
+@media (max-width: 1200px) {
+  .our-work__title {
+    margin-bottom: calc(10px + 20 * ((100vw - 320px) / 1600));
+  }
+}
+.our-work__body {
+  display: flex;
+}
+
+.img-brands {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: #fffbfb;
+  box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+}
+
 .footer {
   padding: 65px 0;
   background: #ffe5e5;
