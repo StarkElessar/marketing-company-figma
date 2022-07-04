@@ -12,6 +12,8 @@ const ourClientSwiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  speed: 400,
-  spaceBetween: 100,
+  speed: 600,
+  slidesPerView: 4,
+  spaceBetween: 20,
+  setWrapperSize: true,
 })
