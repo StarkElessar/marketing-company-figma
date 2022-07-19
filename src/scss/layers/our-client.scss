@@ -1,4 +1,5 @@
 .our-client {
+  @include adaptive-value("padding-bottom", 75, 30, 1);
   &__container {
     display: flex;
     flex-direction: row;
