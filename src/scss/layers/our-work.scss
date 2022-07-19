@@ -11,13 +11,7 @@
     }
   }
   &__title {
-    text-align: center;
-    font-weight: 700;
-    @include adaptiv-font(40, 30);
-    @include adaptive-value("line-height", 54, 35, 2);
-    letter-spacing: 0.02em;
     @include adaptive-value("margin-bottom", 30, 10, 2);
-    text-shadow: 1px 1px 6px rgba(#000, 10%);
   }
 }
 
