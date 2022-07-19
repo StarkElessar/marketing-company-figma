@@ -30,3 +30,39 @@ export function setBurgerMenu(btn, menu) {
     }
   })
 }
+
+export function filterTabs() {
+  const tabsBtn = document.querySelectorAll('.portfolio-filter__btn')
+  const tabsItems = document.querySelectorAll('.portfolio-filter__item')
+
+  const setFilter = (category, items) => {
+    items.forEach((item) => {
+      const isItemFiltered = item.dataset.category !== category
+      const isShowAll = category.toLowerCase() === 'all'
+
+      if (isItemFiltered && !isShowAll) {
+        item.classList.add('hide')
+        setTimeout(() => {
+          item.style.display = 'none'
+        }, 300)
+      } else {
+        item.classList.remove('hide')
+        setTimeout(() => {
+          item.style.display = ''
+        }, 300)
+      }
+    })
+  }
+
+  tabsBtn.forEach((currentBtn) => {
+    currentBtn.addEventListener('click', () => {
+      const currentCategory = currentBtn.dataset.filter
+
+      if (!currentBtn.classList.contains('active')) {
+        tabsBtn.forEach((btn) => btn.classList.remove('active'))
+        currentBtn.classList.add('active')
+        setFilter(currentCategory, tabsItems)
+      }
+    })
+  })
+}
