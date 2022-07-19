@@ -1,0 +1,128 @@
+.our-posts {
+  @include adaptive-value("padding-bottom", 65, 30, 1);
+  &__title {
+    @include adaptive-value("margin-bottom", 30, 15, 1);
+  }
+}
+
+.posts-swiper {
+  max-width: 100%;
+  &__btn-control {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 31px;
+  }
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #e71d36;
+    box-shadow: 0px 4px 6px rgb(231 29 54 / 30%);
+    border: 1px solid #e71d36;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 280ms ease 0ms;
+    &:hover {
+      background-color: #fff;
+      & .posts-swiper__btn_svg path {
+        stroke: $firstAccentColor;
+      }
+    }
+    &_prev {
+      transform: rotate(180deg);
+      margin-right: 17px;
+    }
+    &_next {
+      & svg {
+        position: relative;
+        left: 1px;
+      }
+    }
+  }
+}
+
+.post-item {
+  width: calc(1 / 2 * 100% - 20px);
+  padding: 10px 10px 15px 10px;
+  display: flex;
+  border-radius: 23px;
+  &_red {
+    background: #fff8f8;
+    & .post-item__btn {
+      color: #e71d36;
+    }
+  }
+  &_green {
+    background: #f8fffe;
+    & .post-item__btn {
+      color: #2ec4b6;
+      & svg {
+        & path {
+          stroke: #2ec4b6;
+        }
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    min-width: 200px;
+    height: 240px;
+    border-radius: 12px;
+    overflow: hidden;
+    &_red {
+      box-shadow: 0 5px 0 rgba(#e71d36, 90%);
+    }
+    &_green {
+      box-shadow: 0 5px 0 rgba(#2ec4b6, 90%);
+    }
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 28px;
+  }
+  &__date {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #011627;
+    margin-bottom: 14px;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31px;
+    color: #011627;
+    margin-bottom: 25px;
+  }
+  &__description {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    color: #011627;
+    margin-bottom: 24px;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    & span {
+      margin-right: 13px;
+    }
+  }
+}
