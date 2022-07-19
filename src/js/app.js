@@ -3,6 +3,7 @@ import Swiper, { Navigation } from 'swiper'
 
 flsFunctions.isWebp()
 flsFunctions.setBurgerMenu('.burger-menu', '.menu')
+flsFunctions.filterTabs()
 
 const ourClientSwiper = new Swiper('.swiper', {
   modules: [ Navigation ],
