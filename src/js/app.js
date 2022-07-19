@@ -13,7 +13,23 @@ const ourClientSwiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
   speed: 600,
-  slidesPerView: 4,
-  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1, 
+      spaceBetween: 20,
+    },
+    400: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    620: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
   setWrapperSize: true,
 })
