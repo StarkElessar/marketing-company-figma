@@ -5,7 +5,7 @@ flsFunctions.isWebp()
 flsFunctions.setBurgerMenu('.burger-menu', '.menu')
 flsFunctions.filterTabs()
 
-const ourClientSwiper = new Swiper('.swiper', {
+const ourClientSwiper = new Swiper('.client-slider__wrapper', {
   modules: [ Navigation ],
   direction: 'horizontal',
   loop: true,
@@ -33,4 +33,18 @@ const ourClientSwiper = new Swiper('.swiper', {
     },
   },
   setWrapperSize: true,
+})
+
+const ourBlogPost = new Swiper('.posts-swiper', {
+  modules: [Navigation],
+  direction: 'horizontal',
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  slidesPerView: 2,
+  grid: {
+    rows: 2,
+    fill: 'row',
+  },
 })
