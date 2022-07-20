@@ -4,7 +4,6 @@
     @include adaptive-value("margin-bottom", 30, 15, 1);
   }
 }
-
 .posts-swiper {
   max-width: 100%;
   &__btn-control {
@@ -43,37 +42,41 @@
   }
 }
 .post-item {
-  padding: 10px 10px 15px 10px;
-  display: flex;
+  padding: 2px;
   border-radius: 23px;
+  overflow: hidden;
   &_red {
-    background: #fff8f8;
-    & .post-item__btn {
-      color: #e71d36;
-    }
+    background: linear-gradient(-90deg, rgb(#e71d36, 100%) 27%, rgba(#000, 0%) 100%);
   }
   &_green {
-    background: #f8fffe;
-    & .post-item__btn {
-      color: #2ec4b6;
-      & svg {
-        & path {
-          stroke: #2ec4b6;
-        }
-      }
+    background: linear-gradient(-90deg, rgb(#2ec4b6, 100%) 27%, rgba(#000, 0%) 100%);
+  }
+  &__container {
+    display: flex;
+    padding: 10px 9px 14px 9px;
+    border-radius: 20px;
+    &_red {
+      background: #fff8f8;
+    }
+    &_green {
+      background: #f8fffe;
     }
   }
   &__img {
     position: relative;
-    min-width: 200px;
+    width: 200px;
     height: 240px;
+    background: #eee;
     border-radius: 12px;
     overflow: hidden;
+    @media (max-width: 1050.98px) {
+      @include adaptive-value("height", 240, 160, 1);
+    }
     &_red {
-      box-shadow: 0 5px 0 rgba(#e71d36, 90%);
+      box-shadow: 0 4px #e71d36;
     }
     &_green {
-      box-shadow: 0 5px 0 rgba(#2ec4b6, 90%);
+      box-shadow: 0 4px #2ec4b6;
     }
     & img {
       position: absolute;
@@ -84,43 +87,68 @@
       object-fit: cover;
     }
   }
-
   &__text {
+    max-width: 300px;
     display: flex;
     flex-direction: column;
-    padding-left: 28px;
+    @include adaptive-value("padding-left", 28, 15, 1);
+    @media (max-width: 1050.98px) {
+      max-width: 600px;
+    }
   }
   &__date {
     font-weight: 400;
-    font-size: 12px;
+    @include adaptiv-font(12, 9);
     line-height: 15px;
-    color: #011627;
-    margin-bottom: 14px;
+    color: $fontColor;
+    @include adaptive-value("margin-bottom", 14, 5, 1);
   }
   &__title {
     font-weight: 500;
     font-size: 26px;
-    line-height: 31px;
-    color: #011627;
-    margin-bottom: 25px;
+    @include adaptiv-font(26, 16);
+    @include adaptive-value("line-height", 31, 26, 1);
+    color: $fontColor;
+    @include adaptive-value("margin-bottom", 25, 8, 1);
   }
   &__description {
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    @include adaptiv-font(18, 10);
+    @include adaptive-value("line-height", 22, 18, 1);
     letter-spacing: 0.02em;
-    color: #011627;
-    margin-bottom: 24px;
+    color: $fontColor;
+    @include adaptive-value("margin-bottom", 24, 5, 1);
   }
   &__btn {
     display: flex;
     align-items: center;
     font-weight: 400;
-    font-size: 18px;
+    @include adaptiv-font(18, 12);
     line-height: 22px;
     letter-spacing: 0.02em;
+    opacity: 0.6;
+    transition: $standartTrans;
+    &:hover {
+      opacity: 1;
+    }
     & span {
-      margin-right: 13px;
+      padding-right: 13px;
+    }
+    &_red {
+      color: $firstAccentColor;
+      & svg {
+        & path {
+          stroke: $firstAccentColor;
+        }
+      }
+    }
+    &_green {
+      color: $secondAccentColor;
+      & svg {
+        & path {
+          stroke: $secondAccentColor;
+        }
+      }
     }
   }
 }
