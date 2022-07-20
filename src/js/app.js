@@ -1,12 +1,12 @@
 import * as flsFunctions from './modules/functions.js'
-import Swiper, { Navigation } from 'swiper'
+import Swiper, { Navigation, Grid } from 'swiper'
 
 flsFunctions.isWebp()
 flsFunctions.setBurgerMenu('.burger-menu', '.menu')
 flsFunctions.filterTabs()
 
 const ourClientSwiper = new Swiper('.client-slider__wrapper', {
-  modules: [ Navigation ],
+  modules: [Navigation],
   direction: 'horizontal',
   loop: true,
   navigation: {
@@ -16,7 +16,7 @@ const ourClientSwiper = new Swiper('.client-slider__wrapper', {
   speed: 600,
   breakpoints: {
     320: {
-      slidesPerView: 1, 
+      slidesPerView: 1,
       spaceBetween: 20,
     },
     400: {
@@ -36,8 +36,7 @@ const ourClientSwiper = new Swiper('.client-slider__wrapper', {
 })
 
 const ourBlogPost = new Swiper('.posts-swiper', {
-  modules: [Navigation],
-  direction: 'horizontal',
+  modules: [Navigation, Grid],
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -45,6 +44,7 @@ const ourBlogPost = new Swiper('.posts-swiper', {
   slidesPerView: 2,
   grid: {
     rows: 2,
-    fill: 'row',
+    fill: 'row'
   },
+  spaceBetween: 30
 })
