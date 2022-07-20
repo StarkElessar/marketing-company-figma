@@ -1416,7 +1416,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-item {
-  width: calc(50% - 20px);
   padding: 10px 10px 15px 10px;
   display: flex;
   border-radius: 23px;
