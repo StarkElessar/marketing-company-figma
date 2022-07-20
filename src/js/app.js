@@ -42,6 +42,16 @@ const ourBlogPost = new Swiper('.posts-swiper', {
     prevEl: '.swiper-button-prev',
   },
   slidesPerView: 2,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+    1050: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    }
+  },
   grid: {
     rows: 2,
     fill: 'row'
